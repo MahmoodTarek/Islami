@@ -3,6 +3,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami/ui/on_boarding/on_boarding_page.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
+import 'package:islami/utils/app_launch_service.dart';
 import 'package:islami/utils/app_routes.dart';
 import 'package:islami/utils/app_strings.dart';
 
@@ -102,6 +103,7 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
       done: const Text(AppStrings.onBoardingDone, style: AppStyles.base),
       back: const Text(AppStrings.onBoardingBack, style: AppStyles.base),
       onDone: () {
+        AppLaunchService.setFirstLaunch();
         /*TODO: fix white flash*/
         Navigator.of(context).pushReplacementNamed(AppRoutes.home);
       },

@@ -5,12 +5,11 @@ class AppLaunchService {
 
   static Future<bool> isFirstLaunch() async {
     final preference = await SharedPreferences.getInstance();
-    final isFirst = preference.getBool(firstLaunchKey);
+    return preference.getBool(firstLaunchKey) ?? true;
+  }
 
-    if (isFirst == null) {
-      await preference.setBool(firstLaunchKey, false);
-      return true;
-    }
-    return false;
+  static Future<void> setFirstLaunch() async {
+    final preference = await SharedPreferences.getInstance();
+    preference.setBool(firstLaunchKey, false);
   }
 }
