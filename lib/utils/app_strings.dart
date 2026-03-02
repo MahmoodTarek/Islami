@@ -12,4 +12,8 @@ abstract class AppStrings {
   static const String onBoardingNext = 'Next';
   static const String onBoardingBack = 'Back';
   static const String onBoardingDone = 'Done';
+  static const String homeSearchHint = 'Sura Name';
+  static const String homeMostRecentlyTitle = 'Most Recently';
+  static const String homeSurahsListTitle = 'Suras List';
+
 }
