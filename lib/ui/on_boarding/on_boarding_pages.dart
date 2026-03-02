@@ -33,7 +33,7 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
     PageViewModel(
       titleWidget: const SizedBox.shrink(),
       bodyWidget: OnBoardingPage(
-        image: AppAssets.onBoardingWelcome,
+        image: AppImages.onBoardingWelcome,
         title: AppStrings.onBoardingWelcomeDesc,
       ),
       decoration: pageDecoration,
@@ -41,7 +41,7 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
     PageViewModel(
       titleWidget: const SizedBox.shrink(),
       bodyWidget: OnBoardingPage(
-        image: AppAssets.onBoardingMosque,
+        image: AppImages.onBoardingMosque,
         title: AppStrings.onBoardingMosqueTitle,
         description: AppStrings.onBoardingMosqueDesc,
       ),
@@ -50,7 +50,7 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
     PageViewModel(
       titleWidget: const SizedBox.shrink(),
       bodyWidget: OnBoardingPage(
-        image: AppAssets.onBoardingQuran,
+        image: AppImages.onBoardingQuran,
         title: AppStrings.onBoardingQuranTitle,
         description: AppStrings.onBoardingQuranDesc,
       ),
@@ -59,7 +59,7 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
     PageViewModel(
       titleWidget: const SizedBox.shrink(),
       bodyWidget: OnBoardingPage(
-        image: AppAssets.onBoardingBearish,
+        image: AppImages.onBoardingBearish,
         title: AppStrings.onBoardingBearishTitle,
         description: AppStrings.onBoardingBearishDesc,
       ),
@@ -68,7 +68,7 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
     PageViewModel(
       titleWidget: const SizedBox.shrink(),
       bodyWidget: OnBoardingPage(
-        image: AppAssets.onBoardingRadio,
+        image: AppImages.onBoardingRadio,
         title: AppStrings.onBoardingRadioTitle,
         description: AppStrings.onBoardingRadioDesc,
       ),
@@ -99,9 +99,9 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
           borderRadius: BorderRadius.circular(5.0),
         ),
       ),
-      next: const Text(AppStrings.onBoardingNext, style: AppStyles.base),
-      done: const Text(AppStrings.onBoardingDone, style: AppStyles.base),
-      back: const Text(AppStrings.onBoardingBack, style: AppStyles.base),
+      next: const Text(AppStrings.onBoardingNext, style: AppStyles.base16BoldGold),
+      done: const Text(AppStrings.onBoardingDone, style: AppStyles.base16BoldGold),
+      back: const Text(AppStrings.onBoardingBack, style: AppStyles.base16BoldGold),
       onDone: () {
         AppLaunchService.setFirstLaunch();
         /*TODO: fix white flash*/
