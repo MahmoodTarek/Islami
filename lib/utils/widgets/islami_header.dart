@@ -16,23 +16,24 @@ class IslamiHeader extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.only(top: 75, right: 65, left: 65, bottom: 20),
+      padding: const EdgeInsets.only(top: 50, right: 65, left: 65, ),
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AppAssets.bgMosque),
-          fit: BoxFit.fill,
+          image: AssetImage(AppImages.bgMosqueHeader),
+          fit: BoxFit.contain,
         ),
       ),
       child: LayoutBuilder(
         builder: (context, constraints) {
           final shader = textGradient.createShader(
-            Rect.fromLTWH(0, 50, constraints.maxWidth, 250),
+            Rect.fromLTWH(0, 40, constraints.maxWidth, 250),
           );
           return Text(
             AppStrings.appName,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 80,
+              height: 1.4,
               fontWeight: FontWeight.w400,
               fontFamily: 'Kamail',
               foreground: Paint()..shader = shader,
