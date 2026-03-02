@@ -15,8 +15,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.7
   introduction_screen: ^4.0.0
-  simple_gradient_text: 1.4.0
   shared_preferences: ^2.5.4
+  flutter_svg: ^2.2.3
 
 dev_dependencies:
   flutter_test:
