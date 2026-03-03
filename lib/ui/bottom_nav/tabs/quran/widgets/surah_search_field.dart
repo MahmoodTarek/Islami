@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_strings.dart';
+import 'package:islami/utils/app_styles.dart';
 
-import '../../../utils/app_styles.dart';
 
 class SurahSearchField extends StatelessWidget {
   const SurahSearchField({super.key});
