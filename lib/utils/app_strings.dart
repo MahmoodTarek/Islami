@@ -15,5 +15,9 @@ abstract class AppStrings {
   static const String homeSearchHint = 'Sura Name';
   static const String homeMostRecentlyTitle = 'Most Recently';
   static const String homeSurahsListTitle = 'Suras List';
-
+  static const String tabQuranTitle = 'Quran';
+  static const String tabHadithTitle = 'Hadith';
+  static const String tabRadioTitle = 'Radio';
+  static const String tabTimeTitle = 'Time';
+  static const String tabAzkarTitle = 'Azkar';
 }

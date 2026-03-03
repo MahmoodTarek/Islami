@@ -10,10 +10,11 @@ abstract final class AppImages {
   static const String onBoardingBearish =
       'assets/images/on_boarding/on_boarding_bearish.png';
   static const String bgMosqueHeader = 'assets/images/bg_mosque.png';
+
   static const String bgTime = 'assets/images/bg_time.png';
   static const String bgRadio = 'assets/images/bg_radio.png';
   static const String bgSebha = 'assets/images/bg_sebha.png';
-  static const String bgHome = 'assets/images/bg_home.png';
+  static const String bgQuran = 'assets/images/bg_home.png';
   static const String bgHadith = 'assets/images/bg_hadith.png';
   static const String imgMostRecent = 'assets/images/img_most_recent.png';
 }
@@ -21,4 +22,9 @@ abstract final class AppImages {
 abstract final class AppIcons {
   static const String icSearch = 'assets/icons/ic_quran_search.svg';
   static const String icSurahNumber = 'assets/icons/ic_surah_number.svg';
+  static const String icTabQuran = 'assets/icons/ic_tab_quran.svg';
+  static const String icTabTime = 'assets/icons/ic_tab_time.svg';
+  static const String icTabRadio = 'assets/icons/ic_tab_radio.svg';
+  static const String icTabHadith = 'assets/icons/ic_tab_hadith.svg';
+  static const String icTabAzkar = 'assets/icons/ic_tab_azkar.svg';
 }
