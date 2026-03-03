@@ -105,7 +105,7 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
       onDone: () {
         AppLaunchService.setFirstLaunch();
         /*TODO: fix white flash*/
-        Navigator.of(context).pushReplacementNamed(AppRoutes.home);
+        Navigator.of(context).pushReplacementNamed(AppRoutes.bottomNav);
       },
       baseBtnStyle: TextButton.styleFrom(backgroundColor: Colors.transparent),
     );

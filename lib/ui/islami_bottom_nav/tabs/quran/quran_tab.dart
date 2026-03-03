@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/home/widgets/islami_search_field.dart';
-import 'package:islami/ui/home/widgets/most_recent_section.dart';
-import 'package:islami/ui/home/widgets/surahs_list_section.dart';
-import 'package:islami/utils/widgets/islami_scaffold.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/most_recent_section.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/surah_search_field.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/surahs_list_section.dart';
+import 'package:islami/ui/islami_bottom_nav/widgets/islami_page_layout.dart';
+import 'package:islami/utils/app_assets.dart';
+import 'package:islami/utils/app_strings.dart';
+import 'package:islami/utils/app_styles.dart';
+import 'package:islami/utils/widgets/islami_header.dart';
 
-import '../../utils/app_assets.dart';
-import '../../utils/app_strings.dart';
-import '../../utils/app_styles.dart';
-import '../../utils/widgets/islami_header.dart';
+class QuranTab extends StatelessWidget {
+  const QuranTab({super.key});
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  static const EdgeInsets defaultPadding = EdgeInsets.symmetric(
-    horizontal: 20,
-  );
+  static const EdgeInsets defaultPadding = EdgeInsets.symmetric(horizontal: 20);
 
   @override
   Widget build(BuildContext context) {
-    return IslamiScaffold(
-      backgroundImage: AppImages.bgHome,
+    return IslamiPageLayout(
+      backgroundImage: AppImages.bgQuran,
+      setIslamiHeader: false,
+      scrollable: false,
       content: CustomScrollView(
         slivers: [
           paddedSliver(
-            padding: defaultPadding.copyWith(right: 48,left: 48),
+            padding: defaultPadding.copyWith(right: 48, left: 48),
             child: const IslamiHeader(),
           ),
 
