@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/models/surah.dart';
-import 'package:islami/ui/bottom_nav/tabs/quran/widgets/surah_card.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/surah_card.dart';
 import 'package:islami/utils/app_colors.dart';
 
 class SurahsSection extends StatelessWidget {

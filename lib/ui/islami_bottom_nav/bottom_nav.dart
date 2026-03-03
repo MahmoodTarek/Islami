@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/bottom_nav/tabs/azkar/azkar.dart';
-import 'package:islami/ui/bottom_nav/tabs/hadith/hadith.dart';
-import 'package:islami/ui/bottom_nav/tabs/quran/quran_tab.dart';
-import 'package:islami/ui/bottom_nav/tabs/radio/radio.dart';
-import 'package:islami/ui/bottom_nav/tabs/time/time.dart';
-import 'package:islami/ui/bottom_nav/widgets/tab_icon.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/azkar/azkar.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/hadith/hadith.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/quran/quran_tab.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/radio/radio.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/time/time.dart';
+import 'package:islami/ui/islami_bottom_nav/widgets/tab_icon.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_strings.dart';
