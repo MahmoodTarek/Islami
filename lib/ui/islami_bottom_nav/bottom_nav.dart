@@ -10,14 +10,14 @@ import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_strings.dart';
 import 'package:islami/utils/app_styles.dart';
 
-class BottomNav extends StatefulWidget {
-  const BottomNav({super.key});
+class IslamiBottomNav extends StatefulWidget {
+  const IslamiBottomNav({super.key});
 
   @override
-  State<BottomNav> createState() => _BottomNavState();
+  State<IslamiBottomNav> createState() => _IslamiBottomNavState();
 }
 
-class _BottomNavState extends State<BottomNav> {
+class _IslamiBottomNavState extends State<IslamiBottomNav> {
   int selectedIndex = 0;
 
   final tabs = [QuranTab(), HadithTab(), AzkarTab(), RadioTab(), TimeTab()];

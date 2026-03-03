@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/bottom_nav/tabs/quran/widgets/most_recent_section.dart';
-import 'package:islami/ui/bottom_nav/tabs/quran/widgets/surah_search_field.dart';
-import 'package:islami/ui/bottom_nav/tabs/quran/widgets/surahs_list_section.dart';
-import 'package:islami/ui/bottom_nav/widgets/custom_tab.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/most_recent_section.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/surah_search_field.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/surahs_list_section.dart';
+import 'package:islami/ui/islami_bottom_nav/widgets/custom_tab.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_strings.dart';
 import 'package:islami/utils/app_styles.dart';
@@ -23,7 +23,7 @@ class QuranTab extends StatelessWidget {
         slivers: [
           paddedSliver(
             padding: defaultPadding.copyWith(right: 48, left: 48),
-            child: const IslamiHeader()
+            child: const IslamiHeader(),
           ),
 
           paddedSliver(
