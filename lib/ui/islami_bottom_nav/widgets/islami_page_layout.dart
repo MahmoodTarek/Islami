@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami/utils/widgets/islami_header.dart';
 
 class IslamiPageLayout extends StatelessWidget {
-  final String? backgroundImage;
+  final String? backgroundImagePath;
   final String? backgroundColor;
   final bool setIslamiHeader;
   final Widget content;
@@ -10,7 +10,7 @@ class IslamiPageLayout extends StatelessWidget {
 
   const IslamiPageLayout({
     super.key,
-    this.backgroundImage,
+    this.backgroundImagePath,
     this.backgroundColor,
     required this.content,
     this.setIslamiHeader = true,
@@ -24,7 +24,7 @@ class IslamiPageLayout extends StatelessWidget {
           children: [
             if (setIslamiHeader) const IslamiHeader(),
             if (scrollable)
-              SingleChildScrollView(child: content)
+              content
             else
               Expanded(child: content),
           ],
@@ -35,14 +35,14 @@ class IslamiPageLayout extends StatelessWidget {
         color: backgroundColor == null
             ? null
             : Color(int.parse(backgroundColor!)),
-        image: backgroundImage == null
+        image: backgroundImagePath == null
             ? null
             : DecorationImage(
-                image: AssetImage(backgroundImage!),
+                image: AssetImage(backgroundImagePath!),
                 fit: BoxFit.fill,
               ),
       ),
-      child: body,
+      child: scrollable ?  SingleChildScrollView(child: body) : body,
     );
   }
 }
