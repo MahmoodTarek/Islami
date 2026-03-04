@@ -13,10 +13,12 @@ abstract final class AppImages {
 
   static const String bgTime = 'assets/images/bg_time.png';
   static const String bgRadio = 'assets/images/bg_radio.png';
-  static const String bgSebha = 'assets/images/bg_sebha.png';
+  static const String bgAzkar = 'assets/images/bg_sebha.png';
   static const String bgQuran = 'assets/images/bg_home.png';
   static const String bgHadith = 'assets/images/bg_hadith.png';
   static const String imgMostRecent = 'assets/images/img_most_recent.png';
+  static const String bgAzkarCounterTag = 'assets/images/bg_sebha_counter_tag.png';
+  static const String bgAzkarCounter = 'assets/images/bg_sebha_counter.png';
 }
 
 abstract final class AppIcons {
