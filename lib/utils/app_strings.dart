@@ -20,4 +20,13 @@ abstract class AppStrings {
   static const String tabRadioTitle = 'Radio';
   static const String tabTimeTitle = 'Time';
   static const String tabAzkarTitle = 'Azkar';
+
+  static const String tabAzkarSubhanAllahAya = 'سَبِّحِ اسْمَ رَبِّكَ الأعلى';
+  static const String tabAzkarSubhanAllah = 'سبحان الله';
+
+  static const String tabAzkarAlhamdulillahAya = 'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ';
+  static const String tabAzkarAlhamdulillah = 'الحمدلله';
+
+  static const String tabAzkarAllahAkbarAya = 'وَكَبِّرْهُ تَكْبِيرًا';
+  static const String tabAzkarAllahAkbar = 'الله أكبر';
 }
