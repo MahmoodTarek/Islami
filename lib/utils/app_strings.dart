@@ -29,4 +29,8 @@ abstract class AppStrings {
 
   static const String tabAzkarAllahAkbarAya = 'وَكَبِّرْهُ تَكْبِيرًا';
   static const String tabAzkarAllahAkbar = 'الله أكبر';
+
+  static const String azkarCompletedViewTitle = 'نسأل الله القبول';
+  static const String azkarCompletedViewDesc = 'بارك الله فيك\nلقد أتممت أذكار ما بعد الصلاة';
+  static const String nextSalahAzkar = 'أذكار الصلاة التالية';
 }
