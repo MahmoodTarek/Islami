@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/islami_bottom_nav/tabs/azkar/azkar.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/azkar/after_salah_azkar_tab.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/hadith/hadith.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/quran_tab.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/radio/radio.dart';
@@ -20,7 +20,13 @@ class IslamiBottomNav extends StatefulWidget {
 class _IslamiBottomNavState extends State<IslamiBottomNav> {
   int selectedIndex = 0;
 
-  final tabs = [QuranTab(), HadithTab(), AzkarTab(), RadioTab(), TimeTab()];
+  final tabs = [
+    QuranTab(),
+    HadithTab(),
+    AfterSalahAzkarTab(),
+    RadioTab(),
+    TimeTab()
+  ];
 
   final Color tabBackground = AppColors.darkGray.withValues(alpha: .6);
 

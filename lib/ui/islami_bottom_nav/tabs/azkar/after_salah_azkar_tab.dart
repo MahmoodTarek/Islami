@@ -3,33 +3,20 @@ import 'package:islami/models/zikr.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/azkar/widgets/azkar_completed_view.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/azkar/widgets/sebha.dart';
 import 'package:islami/ui/islami_bottom_nav/widgets/islami_page_layout.dart';
-import 'package:islami/utils/app_strings.dart';
 
 import '../../../../utils/app_assets.dart';
 import '../../../../utils/app_styles.dart';
 
-class AzkarTab extends StatefulWidget {
-  const AzkarTab({super.key});
+class AfterSalahAzkarTab extends StatefulWidget {
+  const AfterSalahAzkarTab({super.key});
 
   @override
-  State<AzkarTab> createState() => _AzkarTabState();
+  State<AfterSalahAzkarTab> createState() => _AfterSalahAzkarTabState();
 }
 
-class _AzkarTabState extends State<AzkarTab> {
-  List<Zikr> azkarList = [
-    Zikr(
-      name: AppStrings.tabAzkarSubhanAllah,
-      aya: AppStrings.tabAzkarSubhanAllahAya,
-    ),
-    Zikr(
-      name: AppStrings.tabAzkarAlhamdulillah,
-      aya: AppStrings.tabAzkarAlhamdulillahAya,
-    ),
-    Zikr(
-      name: AppStrings.tabAzkarAllahAkbar,
-      aya: AppStrings.tabAzkarAllahAkbarAya,
-    ),
-  ];
+final List<Zikr> azkar = Zikr.azkarList();
+
+class _AfterSalahAzkarTabState extends State<AfterSalahAzkarTab> {
   int currentZikrIndex = 0;
   int currentZikrCount = 0;
   bool isCycleCompleted = false;
@@ -57,12 +44,12 @@ class _AzkarTabState extends State<AzkarTab> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                azkarList[currentZikrIndex].aya,
+                azkar[currentZikrIndex].aya,
                 style: AppStyles.bold20White.copyWith(fontSize: 36),
                 textAlign: TextAlign.center,
               ),
               Sebha(
-                currentZikr: azkarList[currentZikrIndex].name,
+                currentZikr: azkar[currentZikrIndex].name,
                 count: currentZikrCount,
                 onTap: () {
                   plusZikr();
@@ -78,9 +65,9 @@ class _AzkarTabState extends State<AzkarTab> {
   void plusZikr() {
     setState(() {
       if (currentZikrCount > 31) {
-        if (currentZikrIndex == azkarList.length - 1) isCycleCompleted = true;
+        if (currentZikrIndex == azkar.length - 1) isCycleCompleted = true;
         currentZikrCount = 0;
-        currentZikrIndex = (currentZikrIndex + 1) % azkarList.length;
+        currentZikrIndex = (currentZikrIndex + 1) % azkar.length;
       } else {
         currentZikrCount++;
       }
