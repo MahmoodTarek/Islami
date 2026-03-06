@@ -22,6 +22,8 @@ abstract final class AppImages {
   static const String bgAzkarCounter = 'assets/images/bg_sebha_counter.png';
   static const String imgCompletedSuccessfully =
       'assets/images/image_completed_successfully.json';
+  static const String imgRightCorner = 'assets/images/img_right_corner.png';
+  static const String imgLeftCorner = 'assets/images/img_left_corner.png';
 }
 
 abstract final class AppIcons {
@@ -32,5 +34,5 @@ abstract final class AppIcons {
   static const String icTabRadio = 'assets/icons/ic_tab_radio.svg';
   static const String icTabHadith = 'assets/icons/ic_tab_hadith.svg';
   static const String icTabAzkar = 'assets/icons/ic_tab_azkar.svg';
-  static const String icPrevArrow = 'assets/icons/ic_prev_arrow.svg';
+  static const String icPrevArrow = 'assets/icons/ic_arrow_left.svg';
 }
