@@ -32,6 +32,8 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/images/on_boarding/
+    - assets/fils/quran/
+    - assets/fils/hadeeth/
 
 
   fonts:
