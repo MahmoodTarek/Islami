@@ -16,7 +16,7 @@ class QuranTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IslamiPageLayout(
-      backgroundImage: AppImages.bgQuran,
+      backgroundImagePath: AppImages.bgQuran,
       setIslamiHeader: false,
       scrollable: false,
       content: CustomScrollView(
