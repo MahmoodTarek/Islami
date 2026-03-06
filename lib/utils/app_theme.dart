@@ -4,7 +4,7 @@ import 'package:islami/utils/app_colors.dart';
 abstract class AppTheme {
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.darkGray,
-    fontFamily: 'Janna'
-
+    canvasColor: AppColors.darkGray,
+    fontFamily: 'Janna',
   );
 }
