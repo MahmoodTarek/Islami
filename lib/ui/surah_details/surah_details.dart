@@ -36,23 +36,28 @@ class _SurahDetailsState extends State<SurahDetails> {
     return Scaffold(
       appBar: SurahDetailsAppBar(surahName: surah.englishName),
       body: SafeArea(
-        child: Expanded(
-          child: ListView(
-            padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 20.w),
-            children: [
-              SurahDetailsHeader(surahName: surah.arabicName),
-              Text(
-                surahText,
-                textAlign: TextAlign.center,
-                textDirection: TextDirection.rtl,
-                style: AppStyles.bold20White.copyWith(
-                  color: AppColors.gold,
-                  height: 2.4.h,
-                ),
+        child: Column(
+          spacing: 4.h,
+          children: [
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 20.w),
+                children: [
+                  SurahDetailsHeader(surahName: surah.arabicName),
+                  Text(
+                    surahText,
+                    textAlign: TextAlign.center,
+                    textDirection: TextDirection.rtl,
+                    style: AppStyles.bold20White.copyWith(
+                      color: AppColors.gold,
+                      height: 2.4.h,
+                    ),
+                  ),
+                ],
               ),
-              Image.asset(AppImages.imgSurahBottom, width: double.infinity),
-            ],
-          ),
+            ),
+            Image.asset(AppImages.imgSurahBottom, width: double.infinity),
+          ],
         ),
       ),
     );
