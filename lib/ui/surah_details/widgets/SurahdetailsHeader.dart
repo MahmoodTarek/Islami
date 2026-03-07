@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_styles.dart';
@@ -16,7 +17,7 @@ class SurahDetailsHeader extends StatelessWidget {
       children: [
         Image.asset(AppImages.imgLeftCorner),
         Padding(
-          padding: const EdgeInsets.only(top: 8.0),
+          padding: EdgeInsets.only(top: 8.0.h),
           child: Text(
             surahName,
             style: AppStyles.bold24DarkGray.copyWith(color: AppColors.gold),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_strings.dart';
 import 'package:islami/utils/app_styles.dart';
@@ -15,7 +16,7 @@ class AzkarCompletedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      spacing: 24,
+      spacing: 24.h,
       children: [
         AspectRatio(
           aspectRatio: 2,
@@ -23,18 +24,18 @@ class AzkarCompletedView extends StatelessWidget {
         ),
         Text(
           AppStrings.azkarCompletedViewDesc,
-          style: AppStyles.bold20White.copyWith(fontSize: 28),
+          style: AppStyles.bold20White.copyWith(fontSize: 28.sp),
           textAlign: TextAlign.center,
         ),
         Text(
           AppStrings.azkarCompletedViewTitle,
-          style: AppStyles.bold20White.copyWith(fontSize: 20),
+          style: AppStyles.bold20White.copyWith(fontSize: 20.sp),
           textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: 10.h),
         SizedBox(
           width: double.infinity,
-          height: 56,
+          height: 56.h,
           child: ElevatedButton(
             onPressed: onNext,
             style: ElevatedButton.styleFrom(

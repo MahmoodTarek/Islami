@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
@@ -19,7 +20,7 @@ class SurahDetailsAppBar extends StatelessWidget
       centerTitle: true,
       leadingWidth: 48,
       leading: Padding(
-        padding: const EdgeInsets.only(left: 28),
+        padding: EdgeInsets.only(left: 28),
         child: InkWell(
           overlayColor: WidgetStatePropertyAll(Colors.transparent),
           splashFactory: NoSplash.splashFactory,
@@ -35,5 +36,5 @@ class SurahDetailsAppBar extends StatelessWidget
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight.h);
 }

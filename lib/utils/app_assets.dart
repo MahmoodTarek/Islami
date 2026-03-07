@@ -24,6 +24,7 @@ abstract final class AppImages {
       'assets/images/image_completed_successfully.json';
   static const String imgRightCorner = 'assets/images/img_right_corner.png';
   static const String imgLeftCorner = 'assets/images/img_left_corner.png';
+  static const String imgSurahBottom = 'assets/images/img_surah_bottom.png';
 }
 
 abstract final class AppIcons {

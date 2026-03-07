@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami/utils/app_colors.dart';
 
@@ -16,9 +17,9 @@ class TabIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(66),
+        borderRadius: BorderRadius.circular(66.r),
         color: isSelected ? AppColors.darkGray.withValues(alpha: .6) : null,
       ),
       child: SvgPicture.asset(path, colorFilter: colorFilter),

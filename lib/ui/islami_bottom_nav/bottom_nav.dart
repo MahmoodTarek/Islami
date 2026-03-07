@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/azkar/after_salah_azkar_tab.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/hadith/hadith.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/quran_tab.dart';
@@ -43,7 +44,7 @@ class _IslamiBottomNavState extends State<IslamiBottomNav> {
 
         elevation: 0,
         iconSize: 22,
-        selectedFontSize: 12,
+        selectedFontSize: 12.sp,
         backgroundColor: AppColors.gold,
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.fixed,
@@ -51,7 +52,7 @@ class _IslamiBottomNavState extends State<IslamiBottomNav> {
         showUnselectedLabels: false,
         selectedItemColor: AppColors.white,
         unselectedItemColor: AppColors.darkGray,
-        selectedLabelStyle: AppStyles.bold20White.copyWith(fontSize: 12),
+        selectedLabelStyle: AppStyles.bold20White.copyWith(fontSize: 12.sp),
         items: bottomNavItems,
       ),
     );

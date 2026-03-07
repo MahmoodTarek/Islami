@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:islami/models/surah.dart';
 import 'package:islami/utils/app_assets.dart';
@@ -25,13 +26,13 @@ class QuranSurahCard extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 AppIcons.icSurahNumber,
-                width: icSurahNumberSize,
-                height: icSurahNumberSize,
+                width: icSurahNumberSize.w,
+                height: icSurahNumberSize.h,
               ),
               Text(
                 "${surah.number}",
                 style: AppStyles.bold20White.copyWith(
-                    fontSize: surahNumberSize),
+                    fontSize: surahNumberSize.sp),
               ),
             ],
           ),
@@ -41,7 +42,7 @@ class QuranSurahCard extends StatelessWidget {
               Text(surah.englishName, style: AppStyles.bold20White),
               Text(
                 '${surah.ayahCount} Verses',
-                style: AppStyles.bold20White.copyWith(fontSize: 14),
+                style: AppStyles.bold20White.copyWith(fontSize: 14.sp),
               ),
             ],
           ),

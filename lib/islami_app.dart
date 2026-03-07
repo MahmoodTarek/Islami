@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/ui/islami_bottom_nav/bottom_nav.dart';
 import 'package:islami/ui/on_boarding/on_boarding_pages.dart';
 import 'package:islami/ui/surah_details/surah_details.dart';
@@ -13,17 +14,24 @@ class IslamiApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      color: AppColors.darkGray,
-      debugShowCheckedModeBanner: false,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.dark,
-      initialRoute: isFirstLaunch ? AppRoutes.onBoarding : AppRoutes.bottomNav,
-      routes: {
-        AppRoutes.onBoarding: (context) => OnBoardingPages(),
-        AppRoutes.bottomNav: (context) => IslamiBottomNav(),
-        AppRoutes.surahDetails: (context) => SurahDetails(),
-      },
+    return ScreenUtilInit(
+      designSize: const Size(430, 932),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MaterialApp(
+        color: AppColors.darkGray,
+        debugShowCheckedModeBanner: false,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: ThemeMode.dark,
+        initialRoute: isFirstLaunch
+            ? AppRoutes.onBoarding
+            : AppRoutes.bottomNav,
+        routes: {
+          AppRoutes.onBoarding: (context) => OnBoardingPages(),
+          AppRoutes.bottomNav: (context) => IslamiBottomNav(),
+          AppRoutes.surahDetails: (context) => SurahDetails(),
+        },
+      ),
     );
   }
 }

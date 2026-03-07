@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/most_recent_section.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/surah_search_field.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/surahs_list_section.dart';
@@ -22,12 +23,12 @@ class QuranTab extends StatelessWidget {
       content: CustomScrollView(
         slivers: [
           paddedSliver(
-            padding: defaultPadding.copyWith(right: 48, left: 48),
+            padding: defaultPadding.copyWith(right: 48.w, left: 48.w),
             child: const IslamiHeader(),
           ),
 
           paddedSliver(
-            padding: defaultPadding.copyWith(bottom: 10),
+            padding: defaultPadding.copyWith(bottom: 10.h),
             child: const SurahSearchField(),
           ),
 
@@ -38,7 +39,7 @@ class QuranTab extends StatelessWidget {
           titleSliver(AppStrings.homeSurahsListTitle),
 
           SliverPadding(
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+            padding: EdgeInsets.fromLTRB(20.w, 0.h, 20.w, 10.h),
             sliver: const SurahsSection(),
           ),
         ],
@@ -57,7 +58,7 @@ class QuranTab extends StatelessWidget {
 
   SliverToBoxAdapter titleSliver(String title) {
     return paddedSliver(
-      padding: defaultPadding.copyWith(bottom: 10, top: 10),
+      padding: defaultPadding.copyWith(bottom: 10.h, top: 10.h),
       child: Text(title, style: AppStyles.base16BoldCreamyYellow),
     );
   }
