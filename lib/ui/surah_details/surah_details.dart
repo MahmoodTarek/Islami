@@ -56,7 +56,11 @@ class _SurahDetailsState extends State<SurahDetails> {
                 ],
               ),
             ),
-            Image.asset(AppImages.imgSurahBottom, width: double.infinity),
+            Image.asset(
+              AppImages.imgSurahBottom,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
           ],
         ),
       ),
