@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami/ui/on_boarding/on_boarding_page.dart';
 import 'package:islami/utils/app_assets.dart';
@@ -23,8 +24,8 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
     titlePadding: EdgeInsets.zero,
     pageColor: Colors.transparent,
     pageMargin: EdgeInsets.zero,
-    bodyPadding: EdgeInsets.symmetric(horizontal: 16),
-    footerPadding: EdgeInsets.only(right: 16, left: 16, bottom: 16),
+    bodyPadding: EdgeInsets.symmetric(horizontal: 16.w),
+    footerPadding: EdgeInsets.only(right: 16.w, left: 16.w, bottom: 16.h),
   );
 
   late final List<PageViewModel> pages = createPages();
@@ -88,20 +89,32 @@ class _OnBoardingPageState extends State<OnBoardingPages> {
       dotsContainerDecorator: BoxDecoration(),
       animationDuration: 400,
       pages: pages,
-
       dotsDecorator: DotsDecorator(
-        size: const Size.square(10.0),
-        activeSize: const Size(20.0, 10.0),
+        size: Size.square(10.0.r),
+        activeSize: Size(20.0.w, 10.0.h),
         activeColor: AppColors.softYellow,
         color: AppColors.darkGray,
-        spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+        spacing: EdgeInsets.symmetric(horizontal: 3.0.w),
         activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
+          borderRadius: BorderRadius.circular(5.0.r),
         ),
       ),
-      next: const Text(AppStrings.onBoardingNext, style: AppStyles.base16BoldGold),
-      done: const Text(AppStrings.onBoardingDone, style: AppStyles.base16BoldGold),
-      back: const Text(AppStrings.onBoardingBack, style: AppStyles.base16BoldGold),
+      nextFlex: 1,
+      nextStyle: TextButton.styleFrom(
+        overlayColor: Colors.transparent,
+        splashFactory: NoSplash.splashFactory,
+      ),
+      doneStyle: TextButton.styleFrom(
+        overlayColor: Colors.transparent,
+        splashFactory: NoSplash.splashFactory,
+      ),
+      backStyle: TextButton.styleFrom(
+        overlayColor: Colors.transparent,
+        splashFactory: NoSplash.splashFactory,
+      ),
+      next: Text(AppStrings.onBoardingNext, style: AppStyles.base16BoldGold),
+      done: Text(AppStrings.onBoardingDone, style: AppStyles.base16BoldGold),
+      back: Text(AppStrings.onBoardingBack, style: AppStyles.base16BoldGold),
       onDone: () {
         AppLaunchService.setFirstLaunch();
         /*TODO: fix white flash*/

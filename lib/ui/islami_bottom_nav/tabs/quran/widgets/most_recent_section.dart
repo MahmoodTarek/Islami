@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/models/recent_surah.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/most_recent_card.dart';
 
@@ -8,14 +9,14 @@ class MostRecentSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
+      height: 150.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: recentSurahs.length,
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         itemBuilder: (context, index) =>
             MostRecentCard(recentSurah: recentSurahs[index]),
-        separatorBuilder: (_, _) => SizedBox(width: 12),
+        separatorBuilder: (_, _) => SizedBox(width: 12.w),
       ),
     );
   }

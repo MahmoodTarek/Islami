@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/models/zikr.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/azkar/widgets/azkar_completed_view.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/azkar/widgets/sebha.dart';
@@ -27,7 +28,7 @@ class _AfterSalahAzkarTabState extends State<AfterSalahAzkarTab> {
       scrollable: true,
       backgroundImagePath: AppImages.bgAzkar,
       content: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 24),
+        padding: EdgeInsets.symmetric(vertical: 30.h, horizontal: 24.w),
         child: Visibility(
           visible: !isCycleCompleted,
           replacement: AzkarCompletedView(
@@ -40,12 +41,12 @@ class _AfterSalahAzkarTabState extends State<AfterSalahAzkarTab> {
             },
           ),
           child: Column(
-            spacing: 16,
+            spacing: 16.h,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 azkar[currentZikrIndex].aya,
-                style: AppStyles.bold20White.copyWith(fontSize: 36),
+                style: AppStyles.bold20White.copyWith(fontSize: 36.sp),
                 textAlign: TextAlign.center,
               ),
               Sebha(
