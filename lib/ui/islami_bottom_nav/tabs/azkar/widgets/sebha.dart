@@ -5,7 +5,6 @@ import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_styles.dart';
 
 class Sebha extends StatelessWidget {
-  static const double _contentTopPadding = 26;
   final String currentZikr;
   final int count;
   final VoidCallback? onTap;
@@ -21,64 +20,76 @@ class Sebha extends StatelessWidget {
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context);
     final isPortrait = media.orientation == Orientation.portrait;
-    final height = isPortrait
-        ? media.size.height * .50
-        : media.size.height * .70;
-    final width = isPortrait ? media.size.width * .80 : media.size.width * .95;
 
-    return Stack(
-      alignment: Alignment.topCenter,
-      children: [
-        Image.asset(
-          AppImages.bgAzkarCounterTag,
-          width: width * .50,
-          height: height * .25,
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 76.h),
-          child: Material(
-            shape: const CircleBorder(),
-            clipBehavior: Clip.antiAlias,
-            animateColor: true,
-            elevation: 20,
-            type: MaterialType.button,
-            color: Colors.transparent,
-            child: InkWell(
-              overlayColor: WidgetStatePropertyAll(
-                AppColors.darkGray.withValues(alpha: .6),
-              ),
-              onTap: onTap,
-              splashFactory: NoSplash.splashFactory,
-              child: Ink(
-                width: width,
-                height: height,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage(AppImages.bgAzkarCounter),
-                    fit: BoxFit.contain,
+    final double sebhaSize =
+    isPortrait ? media.size.width * .75 : media.size.height * 1.2;
+
+    final double tagSize = isPortrait
+        ? sebhaSize * .45
+        : sebhaSize * .45;
+
+    final double tagOverlap = tagSize * .50;
+
+    return SizedBox(
+      width: sebhaSize,
+      height: sebhaSize + tagOverlap,
+      child: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          Positioned(
+            top: 0,
+            child: Image.asset(
+              AppImages.bgAzkarCounterTag,
+              width: tagSize,
+              fit: BoxFit.contain,
+            ),
+          ),
+
+          Positioned(
+            top: tagOverlap,
+            child: Material(
+              shape: const CircleBorder(),
+              clipBehavior: Clip.antiAlias,
+              elevation: 20,
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: onTap,
+                highlightColor: AppColors.darkGray.withValues(alpha: .6),
+                splashFactory: NoSplash.splashFactory,
+                child: Ink(
+                  width: sebhaSize,
+                  height: sebhaSize,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(AppImages.bgAzkarCounter),
+                      fit: BoxFit.contain,
+                    ),
                   ),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      currentZikr,
-                      textAlign: TextAlign.center,
-                      style: AppStyles.bold20White.copyWith(fontSize: 36.sp),
-                    ),
-                    Text(
-                      '$count',
-                      style: AppStyles.bold20White.copyWith(fontSize: 36.sp),
-                    ),
-                  ],
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        currentZikr,
+                        textAlign: TextAlign.center,
+                        style: AppStyles.bold20White.copyWith(
+                          fontSize: 36.sp,
+                        ),
+                      ),
+                      Text(
+                        '$count',
+                        style: AppStyles.bold20White.copyWith(
+                          fontSize: 36.sp,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
