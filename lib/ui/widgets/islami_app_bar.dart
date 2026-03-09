@@ -5,11 +5,10 @@ import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_styles.dart';
 
-class SurahDetailsAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
-  final String surahName;
+class IslamiAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
 
-  const SurahDetailsAppBar({super.key, required this.surahName});
+  const IslamiAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class SurahDetailsAppBar extends StatelessWidget
         ),
       ),
       title: Text(
-        surahName,
+        title,
         style: AppStyles.bold20White.copyWith(color: AppColors.gold),
       ),
     );
