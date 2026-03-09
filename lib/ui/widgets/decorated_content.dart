@@ -45,6 +45,12 @@ class DecoratedContent extends StatelessWidget {
 
     return Stack(
       children: [
+        if (!isDetailsScreen)
+          BottomImage(
+            isDetailsScreen: isDetailsScreen,
+            footerDecoration: footerDecoration,
+          ),
+
         Padding(
           padding: contentPadding,
           child: SafeArea(
@@ -79,20 +85,11 @@ class DecoratedContent extends StatelessWidget {
             ),
           ),
         ),
-
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 112,
-            width: double.infinity,
-            color: isDetailsScreen ? AppColors.darkGray : null,
-            child: Image.asset(
-              footerDecoration,
-              fit: BoxFit.fill,
-              width: double.infinity,
-            ),
+        if (isDetailsScreen)
+          BottomImage(
+            isDetailsScreen: isDetailsScreen,
+            footerDecoration: footerDecoration,
           ),
-        ),
       ],
     );
   }
@@ -115,6 +112,7 @@ class DecoratedContent extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
+      spacing: 12,
       children: [
         Text(
           'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم',
@@ -122,7 +120,6 @@ class DecoratedContent extends StatelessWidget {
           textAlign: TextAlign.center,
           style: style,
         ),
-        SizedBox(height: 12.h),
         Text(
           content,
           textDirection: TextDirection.rtl,
@@ -130,6 +127,34 @@ class DecoratedContent extends StatelessWidget {
           style: style,
         ),
       ],
+    );
+  }
+}
+
+class BottomImage extends StatelessWidget {
+  const BottomImage({
+    super.key,
+    required this.isDetailsScreen,
+    required this.footerDecoration,
+  });
+
+  final bool isDetailsScreen;
+  final String footerDecoration;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        height: 112,
+        width: double.infinity,
+        color: isDetailsScreen ? AppColors.darkGray : null,
+        child: Image.asset(
+          footerDecoration,
+          fit: BoxFit.fill,
+          width: double.infinity,
+        ),
+      ),
     );
   }
 }
