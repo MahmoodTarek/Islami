@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/azkar/after_salah_azkar_tab.dart';
-import 'package:islami/ui/islami_bottom_nav/tabs/hadith/hadith.dart';
+import 'package:islami/ui/islami_bottom_nav/tabs/hadith/hadeth.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/quran_tab.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/radio/radio.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/time/time.dart';
@@ -23,7 +23,7 @@ class _IslamiBottomNavState extends State<IslamiBottomNav> {
 
   final tabs = [
     QuranTab(),
-    HadithTab(),
+    HadethTab(),
     AfterSalahAzkarTab(),
     RadioTab(),
     TimeTab()

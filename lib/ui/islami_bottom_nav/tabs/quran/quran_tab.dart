@@ -40,7 +40,7 @@ class QuranTab extends StatelessWidget {
 
           SliverPadding(
             padding: EdgeInsets.fromLTRB(20.w, 0.h, 20.w, 10.h),
-            sliver: const SurahsSection(),
+            sliver: SurahsSection(),
           ),
         ],
       ),

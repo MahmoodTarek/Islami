@@ -21,7 +21,20 @@ abstract class AppStyles {
   );
   static final TextStyle bold20White = TextStyle(
     fontSize: 20.sp,
-    color: Colors.white,
+    color: AppColors.white,
+    fontWeight: .w700,
+  );
+
+  static final TextStyle description = TextStyle(
+      fontSize: 20.sp,
+      color: AppColors.gold,
+      fontWeight: .w700,
+      height: 2
+  );
+
+  static final TextStyle label = TextStyle(
+    fontSize: 16.sp,
+    color: AppColors.darkGray,
     fontWeight: .w700,
   );
 }
