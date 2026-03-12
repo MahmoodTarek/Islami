@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islami/data/app_launch_service.dart';
 import 'package:islami/ui/on_boarding/on_boarding_page.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
-import 'package:islami/utils/app_launch_service.dart';
 import 'package:islami/utils/app_routes.dart';
 import 'package:islami/utils/app_strings.dart';
 

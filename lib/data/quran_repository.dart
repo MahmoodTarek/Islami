@@ -10,7 +10,7 @@ class QuranRepository {
     return parseSurahText(file, surahNumber != 9);
   }
 
-  static List<Surah> getAllSurahs() => [
+  static final List<Surah> getAllSurahs = [
     Surah(
       number: 1,
       arabicName: "الفاتحه",

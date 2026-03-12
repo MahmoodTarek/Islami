@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:islami/data/most_recently_pref.dart';
 import 'package:islami/models/surah.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_styles.dart';
@@ -16,10 +17,11 @@ class QuranSurahCard extends StatelessWidget {
     final double surahNumberSize = surah.number > 99 ? 16 : 20;
     return InkWell(
       onTap: () {
+        MostRecentlyPref.saveMostRecentlySurah(surah.number - 1);
         Navigator.pushNamed(context, '/surah-details', arguments: surah);
       },
       child: Row(
-        spacing: 24,
+        spacing: 24.w,
         children: [
           Stack(
             alignment: Alignment.center,
@@ -32,14 +34,18 @@ class QuranSurahCard extends StatelessWidget {
               Text(
                 "${surah.number}",
                 style: AppStyles.bold20White.copyWith(
-                    fontSize: surahNumberSize.sp),
+                  fontSize: surahNumberSize.sp,
+                ),
               ),
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(surah.englishName, style: AppStyles.bold20White),
+              Text(
+                surah.englishName,
+                style: AppStyles.bold20White.copyWith(fontSize: 20.sp),
+              ),
               Text(
                 '${surah.ayahCount} Verses',
                 style: AppStyles.bold20White.copyWith(fontSize: 14.sp),
@@ -47,7 +53,10 @@ class QuranSurahCard extends StatelessWidget {
             ],
           ),
           Spacer(),
-          Text(surah.arabicName, style: AppStyles.bold20White),
+          Text(
+            surah.arabicName,
+            style: AppStyles.bold20White.copyWith(fontSize: 20.sp),
+          ),
         ],
       ),
     );

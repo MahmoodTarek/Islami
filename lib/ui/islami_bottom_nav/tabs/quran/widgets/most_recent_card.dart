@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islami/models/recent_surah.dart';
+import 'package:islami/models/surah.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_styles.dart';
 
 class MostRecentCard extends StatelessWidget {
-  final RecentSurah recentSurah;
+  final Surah recentSurah;
 
   const MostRecentCard({super.key, required this.recentSurah});
 
@@ -27,10 +27,12 @@ class MostRecentCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(recentSurah.englishName, style: AppStyles.bold24DarkGray),
-                Text(recentSurah.arabicName, style: AppStyles.bold24DarkGray),
+                Text(recentSurah.englishName,
+                    style: AppStyles.bold24DarkGray.copyWith(fontSize: 24.sp)),
+                Text(recentSurah.arabicName,
+                    style: AppStyles.bold24DarkGray.copyWith(fontSize: 24.sp)),
                 Text(
-                  '${recentSurah.versesCount} Verses',
+                  '${recentSurah.ayahCount} Verses',
                   style: AppStyles.bold24DarkGray.copyWith(fontSize: 14.sp),
                 ),
               ],
