@@ -1,59 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islami/models/recent_surah.dart';
+import 'package:islami/data/most_recently_pref.dart';
+import 'package:islami/data/quran_repository.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/most_recent_card.dart';
 
-class MostRecentSection extends StatelessWidget {
+import '../../../../../utils/app_styles.dart';
+
+class MostRecentSection extends StatefulWidget {
   const MostRecentSection({super.key});
 
   @override
+  State<MostRecentSection> createState() => _MostRecentSectionState();
+}
+
+class _MostRecentSectionState extends State<MostRecentSection> {
+  @override
+  void initState() {
+    super.initState();
+    loadRecentSurahs();
+  }
+
+  Future<void> loadRecentSurahs() async {
+    final indices = await MostRecentlyPref.getMostRecentlySurahsIndices();
+    MostRecentlyPref.recentSurahsNotifier.value = indices;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150.h,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: recentSurahs.length,
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
-        itemBuilder: (context, index) =>
-            MostRecentCard(recentSurah: recentSurahs[index]),
-        separatorBuilder: (_, _) => SizedBox(width: 12.w),
-      ),
+    return ValueListenableBuilder<List<int>>(
+      valueListenable: MostRecentlyPref.recentSurahsNotifier,
+      builder: (context, indices, _) {
+        return SizedBox(
+          height: 150.h,
+          child: indices.isEmpty
+              ? Center(
+                  child: Text(
+                    'No recent surahs',
+                    style: AppStyles.base16BoldCreamyYellow,
+                  ),
+                )
+              : ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: indices.length,
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  itemBuilder: (context, index) {
+                    return MostRecentCard(
+                      recentSurah: QuranRepository.getAllSurahs[indices[index]],
+                    );
+                  },
+                  separatorBuilder: (_, _) => SizedBox(width: 12.w),
+                ),
+        );
+      },
     );
   }
 }
-
-List<RecentSurah> recentSurahs = [
-  const RecentSurah(
-    englishName: 'Al-Fatiha',
-    arabicName: 'الفاتحة',
-    versesCount: 7,
-  ),
-
-  const RecentSurah(
-    englishName: 'Al-Baqarah',
-    arabicName: 'البقرة',
-    versesCount: 286,
-  ),
-
-  const RecentSurah(
-    englishName: 'Al-Kahf',
-    arabicName: 'الكهف',
-    versesCount: 110,
-  ),
-
-  const RecentSurah(englishName: 'Yasin', arabicName: 'يس', versesCount: 83),
-
-  const RecentSurah(
-    englishName: 'Ar-Rahman',
-    arabicName: 'الرحمن',
-    versesCount: 78,
-  ),
-
-  const RecentSurah(
-    englishName: 'Al-Mulk',
-    arabicName: 'الملك',
-    versesCount: 30,
-  ),
-
-  const RecentSurah(englishName: 'An-Nas', arabicName: 'الناس', versesCount: 6),
-];
