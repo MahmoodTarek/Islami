@@ -1,15 +1,14 @@
+import 'package:islami/utils/app_shared_pref_key.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppLaunchService {
-  static const String firstLaunchKey = 'is_first_launch';
-
   static Future<bool> isFirstLaunch() async {
     final preference = await SharedPreferences.getInstance();
-    return preference.getBool(firstLaunchKey) ?? true;
+    return preference.getBool(AppSharedPrefKey.firstLaunch) ?? true;
   }
 
   static Future<void> setFirstLaunch() async {
     final preference = await SharedPreferences.getInstance();
-    preference.setBool(firstLaunchKey, false);
+    preference.setBool(AppSharedPrefKey.firstLaunch, false);
   }
 }
