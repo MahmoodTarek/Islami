@@ -67,7 +67,7 @@ class DecoratedContent extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: AppStyles.bold24DarkGray.copyWith(
                           color: headerColor,
-                          fontSize: titleFontSize,
+                          fontSize: titleFontSize.sp,
                         ),
                       ),
                     ),

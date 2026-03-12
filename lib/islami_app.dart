@@ -19,21 +19,23 @@ class IslamiApp extends StatelessWidget {
       designSize: const Size(430, 932),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp(
-        color: AppColors.darkGray,
-        debugShowCheckedModeBanner: false,
-        darkTheme: AppTheme.darkTheme,
-        themeMode: ThemeMode.dark,
-        initialRoute: isFirstLaunch
-            ? AppRoutes.onBoarding
-            : AppRoutes.bottomNav,
-        routes: {
-          AppRoutes.onBoarding: (context) => OnBoardingPages(),
-          AppRoutes.bottomNav: (context) => IslamiBottomNav(),
-          AppRoutes.surahDetails: (context) => SurahDetails(),
-          AppRoutes.hadethDetails: (context) => HadethDetails(),
-        },
-      ),
+      builder: (context, child) {
+        return MaterialApp(
+          color: AppColors.darkGray,
+          debugShowCheckedModeBanner: false,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: ThemeMode.dark,
+          initialRoute: isFirstLaunch
+              ? AppRoutes.onBoarding
+              : AppRoutes.bottomNav,
+          routes: {
+            AppRoutes.onBoarding: (context) => OnBoardingPages(),
+            AppRoutes.bottomNav: (context) => IslamiBottomNav(),
+            AppRoutes.surahDetails: (context) => SurahDetails(),
+            AppRoutes.hadethDetails: (context) => HadethDetails(),
+          },
+        );
+      },
     );
   }
 }
