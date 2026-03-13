@@ -7,8 +7,29 @@ import 'package:islami/utils/app_strings.dart';
 import 'package:islami/utils/app_styles.dart';
 
 
-class SurahSearchField extends StatelessWidget {
-  const SurahSearchField({super.key});
+class SurahSearchField extends StatefulWidget {
+  final ValueChanged<String> onChangeSurahSearch;
+
+  const SurahSearchField({super.key, required this.onChangeSurahSearch});
+
+  @override
+  State<SurahSearchField> createState() => _SurahSearchFieldState();
+}
+
+class _SurahSearchFieldState extends State<SurahSearchField> {
+  late TextEditingController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +39,8 @@ class SurahSearchField extends StatelessWidget {
     );
 
     return TextField(
+      controller: controller,
+      onChanged: widget.onChangeSurahSearch,
       decoration: InputDecoration(
         border: baseBorder,
         enabledBorder: baseBorder,

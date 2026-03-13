@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islami/data/quran_repository.dart';
+import 'package:islami/models/surah.dart';
 import 'package:islami/ui/islami_bottom_nav/tabs/quran/widgets/surah_card.dart';
 import 'package:islami/utils/app_colors.dart';
 
 class SurahsSection extends StatelessWidget {
-  const SurahsSection({super.key});
+  final List<Surah> quranSurahs;
+
+  const SurahsSection({super.key, required this.quranSurahs});
 
   @override
   Widget build(BuildContext context) {
-    final allSurahs = QuranRepository.getAllSurahs;
-
     return SliverList.separated(
-      itemCount: allSurahs.length,
-      itemBuilder: (context, index) => QuranSurahCard(surah: allSurahs[index]),
+      itemCount: quranSurahs.length,
+      itemBuilder: (context, index) =>
+          QuranSurahCard(surah: quranSurahs[index]),
       separatorBuilder: (_, _) => Divider(
         height: 20.h,
         thickness: 1.5,
